@@ -1,0 +1,38 @@
+body {
+    background: linear-gradient(to right, #f8e4be, #fed07b); /* Fondo degradado llamativo */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .list-group-item {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .btn {
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #f3c33f;
+    border-color: #ebb136;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f0d47a;
+  }
+  
