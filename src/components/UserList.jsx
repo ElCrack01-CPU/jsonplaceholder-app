@@ -1,28 +1,39 @@
-import useFetch from '../hooks/useFetch';
-import { fetchUsers } from '../services/api';
+import React from 'react';
+import { useFetch } from '../hooks/useFetch'
+import './components.css';
+import { fetchUsers } from '../services/GetUsersApi';
 
-const UserList = () => {
-  const { data: users, loading, error, currentPage, setCurrentPage } = useFetch(fetchUsers);
+export const UserList = ({ onSelectUser }) => {
+  const { data, loading, error, currentPage, setCurrentPage } = useFetch(fetchUsers, 1, 5);
 
-  if (loading) return <p className="text-primary">Loading users...</p>;
-  if (error) return <p className="text-danger">Error loading users</p>;
+  if (loading) {
+    return <div>Cargando usuarios...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const users = data || [];
+
+  console.log(users);
 
   return (
-    <div className="container">
-      <h2 className="text-center my-4">Users</h2>
-      <ul className="list-group">
-        {users.map((user) => (
-          <li key={user.id} className="list-group-item">
-            <strong>{user.name}</strong> - {user.email}
-          </li>
+    <div className='user-list'>
+      <h2 className='text-center primary-text mb-4'>Users List</h2>
+      <ul>
+        {users.map(user => (
+          <li key={user.id} onClick={() => onSelectUser(user.id)}>{user.name}</li>
         ))}
+        {users.length === 0 && <p className='text-center' >No hay más usuarios disponibles.</p>}
       </ul>
-      <div className="d-flex justify-content-center my-3">
-        <button className="btn btn-primary mx-2" onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}>Prev</button>
-        <button className="btn btn-primary mx-2" onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
+      <div className='d-flex justify-content-between'>
+        <button onClick={() => setCurrentPage(currentPage - 1)} className='btn btn-primary btn-shadow btn-rounded' disabled={currentPage <= 1}>Anterior</button>
+        
+        <button onClick={() => setCurrentPage(currentPage + 1)} className='btn btn-primary btn-shadow btn-rounded' disabled={users.length < 5}>Siguiente</button>
       </div>
+
     </div>
   );
-};
+}
 
-export default UserList;

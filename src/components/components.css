@@ -1,0 +1,80 @@
+/* user-list.module.css */
+.user-list {
+    h2 {
+      color: #343a40;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    li {
+      background-color: #f8f9fa;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+    
+    p {
+      color: #6c757d;
+      font-style: italic;
+    }
+  }
+  
+  .btn {
+    font-weight: bold !important;
+    color: #ffffff !important;
+    border-radius: 5px !important;
+  }
+  
+  .btn-primary {
+    background-color: #f3c33f !important;
+    border-color: #ebb136 !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f0d47a !important;
+  }
+  
+  
+  .primary-text {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 32px !important;
+    color: #e7a311 !important;  
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  .primary-bg {
+    background-color: #f8b930 !important;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .info-text{
+    color: #e99e13; 
+    font-size: 30px; 
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .success-text{
+    color: #faba43; 
+    font-size: 25px; 
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  

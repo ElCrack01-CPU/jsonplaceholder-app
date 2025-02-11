@@ -1,7 +1,7 @@
-import Home from './pages/Home';
+import {Home} from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+export const App = () => {
   return (
     <div>
       <Home />
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+ 
