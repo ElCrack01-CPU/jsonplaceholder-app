@@ -38,7 +38,7 @@ export const UserDetails = ({ user }) => {
   };
 
   if (postsHook.loading) {
-    return <div className="text-center mt-4"><div className="spinner-border text-primary" role="status"><span className="sr-only">Loading...</span></div></div>;
+    return <div className="text-center mt-4"><div className="spinner-border text-warning" role="status"></div></div>;
   }
 
   if (postsHook.error) {

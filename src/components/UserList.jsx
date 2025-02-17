@@ -7,7 +7,7 @@ export const UserList = ({ onSelectUser }) => {
   const { data, loading, error, currentPage, setCurrentPage } = useFetch(fetchUsers, 1, 5);
 
   if (loading) {
-    return <div>Cargando usuarios...</div>;
+    return <div className="text-center mt-4"><div className="spinner-border text-warning" role="status"></div></div>;
   }
 
   if (error) {
